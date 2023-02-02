@@ -1,9 +1,9 @@
 
 function multiDimensionalUnique(arr) {
-    var uniques = [];
-    var itemsFound = {};
-    for (var i = 0, l = arr.length; i < l; i++) {
-        var stringified = JSON.stringify(arr[i]);
+    let uniques = [];
+    let itemsFound = {};
+    for (let i = 0, l = arr.length; i < l; i++) {
+        let stringified = JSON.stringify(arr[i]);
         if (itemsFound[stringified]) { continue; }
         uniques.push(arr[i]);
         itemsFound[stringified] = true;
@@ -13,17 +13,17 @@ function multiDimensionalUnique(arr) {
 
 function coinChange() {
 
-    const coins = [1, 2, 4], target = 4, combination = [];
+    const coins = [1, 2, 4,10], target = 10, combination = [];
 
     let finalCombination = new Set();
 
     if (target == 0) return []
 
-    for (var i = 0; i < coins.length; i += 1) {
+    for (let i = 0; i < coins.length; i += 1) {
         if ((target % coins[i]) == 0) {
             finalCombination.add(new Array((target / coins[i])).fill(coins[i]))
         }
-        for (var j = i; j < coins.length; j += 1) {
+        for (let j = i; j < coins.length; j += 1) {
             let combinationArr = [coins[i], coins[j]]
             combinationArr.sort()
             combination.push(combinationArr);
